@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper -small">
+    <div class="wrapper">
         <div class="row top justify-content-center">
             <div>
                 <div class="io -camera"></div>
@@ -7,7 +7,9 @@
             </div>
         </div>
         <div class="col screen">
-            
+            <div class="row background"></div>
+            <ui-header></ui-header>
+            <ui-content></ui-content>
         </div>
         <div class="row bottom justify-content-center">
             <div class="home-button"></div>
@@ -16,16 +18,23 @@
 </template>
 
 <script>
-export default {
-    data () {
-        return {
-            msg: 'Welcome to Your Vue.js App'
+    import Header from './UiHeader.vue'
+    import Content from './UiContent.vue'
+    export default {
+        components: {
+            'ui-header': Header,
+            'ui-content': Content
+        },
+        data () {
+            return {
+                msg: 'Welcome to Your Vue.js App'
+            }
         }
     }
-}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+    $screen-height: 540px;
     .wrapper {
         width: 350px;
         padding-left: 10px;
@@ -64,8 +73,20 @@ export default {
             }
         }
         > .screen {
-            height: 540px;
+            height: $screen-height;
             border: 2px solid #AAAAAA;
+            overflow: hidden;
         }
+    }
+    .background {
+        height: $screen-height;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center; 
+        background-image: url('https://www.w3schools.com/w3images/fjords.jpg');
+        filter: blur(5px);
+        transform: scale(1.3);
     }
 </style>
