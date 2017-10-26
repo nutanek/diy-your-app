@@ -30,7 +30,8 @@
                 info: {
                     displayname: 'Nutkusasasng',
                     appBackgroundColor: '#FFFFFF',
-                    titleBackgroundColor: "#E74C3C"
+                    titleBackgroundColor: "#E74C3C",
+                    appIconColor: "#000000"
                 } 
             }
         },

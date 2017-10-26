@@ -12,7 +12,8 @@
             <ui-content 
                 :appBackground="info.appBackgroundColor"
                 :titleBackground="info.titleBackgroundColor"
-                ></ui-content>
+                :appIcon="info.appIconColor">
+            </ui-content>
         </div>
         <div class="row bottom justify-content-center">
             <div class="home-button"></div>

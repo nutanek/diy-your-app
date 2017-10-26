@@ -24,14 +24,20 @@
         </div>
 
         <div class="form-group">
+            <label>Apps Icon</label>
+            <div class="input-group">
+                <input type="text" class="form-control" v-model="appIconColor">
+                <color-picker :initColor="appIconColor" :pickColor="changeAppIconColor"></color-picker>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label>Title Background</label>
             <div class="input-group">
                 <input type="text" class="form-control" v-model="titleBackgroundColor">
                 <color-picker :initColor="titleBackgroundColor" :pickColor="changeTitleBgColor"></color-picker>
             </div>
         </div>
-    
-        
     </form>
 </template>
 
@@ -46,7 +52,8 @@
             return {
                 displayname: this.info.displayname,
                 appBackgroundColor: this.info.appBackgroundColor,
-                titleBackgroundColor: this.info.titleBackgroundColor
+                titleBackgroundColor: this.info.titleBackgroundColor,
+                appIconColor: this.info.appIconColor
             }
         },
         methods: {
@@ -55,6 +62,9 @@
             },
             changeTitleBgColor(color) {
                 this.titleBackgroundColor = color
+            },
+            changeAppIconColor(color) {
+                this.appIconColor = color
             }
         },
         watch: {
@@ -66,6 +76,9 @@
             },
             titleBackgroundColor(color) {
                 this.edit('titleBackgroundColor', color)
+            },
+            appIconColor(color) {
+                this.edit('appIconColor', color)
             }
         }
     }

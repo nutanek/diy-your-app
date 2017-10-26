@@ -2,10 +2,12 @@
     <div class="row content">
         <div class="col wrapper" v-bind:style="{backgroundColor: appBackgroundRGBA}">
             <div class="row">
-                <p class="title" v-bind:style="{backgroundColor: titleBackground, color: titleTextColor}">Available Apps:</p>
+                <p class="title" v-bind:style="{backgroundColor: titleBackground, color: titleTextColor}">
+                    Available Apps:
+                </p>
             </div>
             <div class="row">
-                <div class="col-4" v-for="(item, index) in functions">
+                <div class="col-4" v-for="(item, index) in functions" v-bind:style="{color: appIcon}">
                     <ui-function 
                         :icon="item.icon" 
                         :title="item.title">
@@ -20,7 +22,7 @@
     import { invertColor, hexToRGBA } from './../libs/color'
     import Function from './UiFunction.vue'
     export default {
-        props: ['appBackground', 'titleBackground'],
+        props: ['appBackground', 'titleBackground', 'appIcon'],
         components: {
             'ui-function': Function,
         },
