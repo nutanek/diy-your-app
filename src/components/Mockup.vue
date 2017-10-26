@@ -9,7 +9,10 @@
         <div class="col screen">
             <div class="row background"></div>
             <ui-header :displayname="info.displayname"></ui-header>
-            <ui-content :background="info.appBackgroundColor"></ui-content>
+            <ui-content 
+                :appBackground="info.appBackgroundColor"
+                :titleBackground="info.titleBackgroundColor"
+                ></ui-content>
         </div>
         <div class="row bottom justify-content-center">
             <div class="home-button"></div>

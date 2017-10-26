@@ -10,7 +10,7 @@
                 <app-mockup :info="info"></app-mockup>
             </div>
             <div class="col-md-7">
-                <app-form :edit="editInfo"></app-form>
+                <app-form :info="info" :edit="editInfo"></app-form>
             </div>
         </div>
     </div>
@@ -28,8 +28,9 @@
         data () {
             return {
                 info: {
-                    displayname: 'Nutkung',
-                    appBackgroundColor: '#FFCC00'
+                    displayname: 'Nutkusasasng',
+                    appBackgroundColor: '#FFFFFF',
+                    titleBackgroundColor: "#E74C3C"
                 } 
             }
         },
