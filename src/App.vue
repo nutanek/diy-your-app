@@ -10,7 +10,7 @@
                 <app-mockup></app-mockup>
             </div>
             <div class="col-md-7">
-            
+                <app-form></app-form>
             </div>
         </div>
     </div>
@@ -18,10 +18,12 @@
 
 <script>
     import Mockup from './components/Mockup.vue'
+    import Form from './components/Form.vue'
     export default {
         name: 'app',
         components: {
-            'app-mockup': Mockup
+            'app-mockup': Mockup,
+            'app-form': Form
         },
         data () {
             return {

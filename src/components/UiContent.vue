@@ -29,14 +29,11 @@
                     { icon: 'fa-comments-o', title: 'chat' },
                     { icon: 'fa-film', title: 'movies' },
                     { icon: 'fa-music', title: 'songs' },
-                    { icon: 'fa-newspaper-o', title: 'news' },
-                    { icon: 'fa-comments-o', title: 'chat' },
-                    { icon: 'fa-film', title: 'movies' },
-                    { icon: 'fa-music', title: 'songs' },
-                    { icon: 'fa-newspaper-o', title: 'news' },
-                    { icon: 'fa-comments-o', title: 'chat' },
-                    { icon: 'fa-film', title: 'movies' },
-                    { icon: 'fa-music', title: 'songs' },
+                    { icon: 'fa-picture-o', title: 'Gallery' },
+                    { icon: 'fa-folder-open-o', title: 'Files' },
+                    { icon: 'fa-heart-o', title: 'Health' },
+                    { icon: 'fa-map-o', title: 'Travel' },
+                    { icon: 'fa-calendar-check-o', title: 'Booking' }
                 ]
             }
         }
