@@ -8,8 +8,8 @@
         </div>
         <div class="col screen">
             <div class="row background"></div>
-            <ui-header></ui-header>
-            <ui-content></ui-content>
+            <ui-header :displayname="info.displayname"></ui-header>
+            <ui-content :background="info.appBackgroundColor"></ui-content>
         </div>
         <div class="row bottom justify-content-center">
             <div class="home-button"></div>
@@ -21,6 +21,7 @@
     import Header from './UiHeader.vue'
     import Content from './UiContent.vue'
     export default {
+        props: ['info'],
         components: {
             'ui-header': Header,
             'ui-content': Content

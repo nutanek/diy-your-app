@@ -5,7 +5,7 @@
         </div>
         <div class="col-12 text-center">
             <div class="displayname">
-                Nutanek
+                {{displayname}}
             </div>
         </div>
     </div>
@@ -13,6 +13,7 @@
 
 <script>
 export default {
+    props: ['displayname'],
     data () {
         return {
             msg: 'Welcome to Your Vue.js App'

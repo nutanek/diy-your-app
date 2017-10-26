@@ -2,7 +2,7 @@
     <div class="row content">
         <div class="col wrapper">
             <div class="row">
-                <p class="title">Available Apps:</p>
+                <p class="title" v-bind:style="{backgroundColor: background}">Available Apps:</p>
             </div>
             <div class="row">
                 <div class="col-4" v-for="(item, index) in functions">
@@ -19,6 +19,7 @@
 <script>
     import Function from './UiFunction.vue'
     export default {
+        props: ['background'],
         components: {
             'ui-function': Function,
         },

@@ -7,10 +7,10 @@
         </div>
         <div class="row">
             <div class="col-md-5">
-                <app-mockup></app-mockup>
+                <app-mockup :info="info"></app-mockup>
             </div>
             <div class="col-md-7">
-                <app-form></app-form>
+                <app-form :edit="editInfo"></app-form>
             </div>
         </div>
     </div>
@@ -27,7 +27,21 @@
         },
         data () {
             return {
-                msg: 'Welcome to Your Vue.js App'
+                info: {
+                    displayname: 'Nutkung',
+                    appBackgroundColor: '#FFCC00'
+                } 
+            }
+        },
+        methods: {
+            editInfo(propName, value) {
+                this.info[propName] = value
+                console.log(value)
+            }
+        },
+        watch: {
+            info() {
+                console.log('ssswwwss')
             }
         }
     }
