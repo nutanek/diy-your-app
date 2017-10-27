@@ -4,7 +4,7 @@
             <div class="profile" v-bind:style="{backgroundImage: 'url(' + profileImageContent + ')'}"></div>
         </div>
         <div class="col-12 text-center">
-            <div class="displayname">
+            <div class="displayname" v-bind:style="{color: displaynameColor}">
                 {{displayname}}
             </div>
         </div>
@@ -14,7 +14,11 @@
 <script>
     import { createImage } from './../libs/image'
     export default {
-        props: ['profileImage', 'displayname'],
+        props: [
+            'profileImage', 
+            'displayname', 
+            'displaynameColor'
+        ],
         data() {
             return {
                 profileImageContent: 'http://i.dailymail.co.uk/i/pix/2017/04/20/13/3F6B966D00000578-4428630-image-m-80_1492690622006.jpg',

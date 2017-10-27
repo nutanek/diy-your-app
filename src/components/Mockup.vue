@@ -10,7 +10,8 @@
             <div class="row background" v-bind:style="{backgroundImage: 'url(' + backgroundImageContent + ')'}"></div>
             <ui-header 
                 :profileImage="info.profileImage"
-                :displayname="info.displayname">
+                :displayname="info.displayname"
+                :displaynameColor="info.displaynameColor">
             </ui-header>
             <ui-content 
                 :appBackground="info.appBackgroundColor"

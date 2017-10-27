@@ -28,7 +28,8 @@
         data() {
             return {
                 info: {
-                    displayname: 'Nutkusasasng',
+                    displayname: 'NutAnek',
+                    displaynameColor: '#FFFFFF',
                     appBackgroundColor: '#FFFFFF',
                     titleBackgroundColor: "#E74C3C",
                     appIconColor: "#000000",
