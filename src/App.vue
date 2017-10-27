@@ -25,13 +25,14 @@
             'app-mockup': Mockup,
             'app-form': Form
         },
-        data () {
+        data() {
             return {
                 info: {
                     displayname: 'Nutkusasasng',
                     appBackgroundColor: '#FFFFFF',
                     titleBackgroundColor: "#E74C3C",
-                    appIconColor: "#000000"
+                    appIconColor: "#000000",
+                    profileImage: null                
                 } 
             }
         },
@@ -39,11 +40,6 @@
             editInfo(propName, value) {
                 this.info[propName] = value
                 console.log(value)
-            }
-        },
-        watch: {
-            info() {
-                console.log('ssswwwss')
             }
         }
     }

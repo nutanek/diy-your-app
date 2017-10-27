@@ -1,7 +1,7 @@
 <template>
     <div class="row header justify-content-center">
         <div class="col-12">
-            <div class="profile"></div>
+            <div class="profile" v-bind:style="{ backgroundImage: 'url(' + profileImageContent + ')' }"></div>
         </div>
         <div class="col-12 text-center">
             <div class="displayname">
@@ -13,10 +13,29 @@
 
 <script>
 export default {
-    props: ['displayname'],
-    data () {
+    props: ['profileImage', 'displayname'],
+    data() {
         return {
-            msg: 'Welcome to Your Vue.js App'
+            profileImageContent: 'http://i.dailymail.co.uk/i/pix/2017/04/20/13/3F6B966D00000578-4428630-image-m-80_1492690622006.jpg'
+        }
+    },
+    methods: {
+        createImage(propName, file) {
+            if (file) {
+                let image = new Image();
+                let reader = new FileReader();
+                let vm = this;
+                reader.onload = (e) => {
+                    vm.image = e.target.result;
+                    vm[propName] = vm.image
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    },
+    watch: {
+        profileImage(imageData) {
+            this.createImage('profileImageContent', imageData)
         }
     }
 }
@@ -35,8 +54,7 @@ export default {
             border: 4px solid #FFFFFF;
             border-radius: 100%;
             background-size: cover;
-            background-position: center; 
-            background-image: url('http://i.dailymail.co.uk/i/pix/2017/04/20/13/3F6B966D00000578-4428630-image-m-80_1492690622006.jpg');
+            background-position: center;
         }
         .displayname {
             font-weight: bold;

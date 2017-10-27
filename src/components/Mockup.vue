@@ -8,7 +8,10 @@
         </div>
         <div class="col screen">
             <div class="row background"></div>
-            <ui-header :displayname="info.displayname"></ui-header>
+            <ui-header 
+                :profileImage="info.profileImage"
+                :displayname="info.displayname">
+            </ui-header>
             <ui-content 
                 :appBackground="info.appBackgroundColor"
                 :titleBackground="info.titleBackgroundColor"
@@ -29,11 +32,6 @@
         components: {
             'ui-header': Header,
             'ui-content': Content
-        },
-        data () {
-            return {
-                msg: 'Welcome to Your Vue.js App'
-            }
         }
     }
 </script>

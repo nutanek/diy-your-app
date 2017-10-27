@@ -26,7 +26,7 @@
         components: {
             'ui-function': Function,
         },
-        data () {
+        data() {
             return {
                 functions: [
                     { icon: 'fa-newspaper-o', title: 'news' },

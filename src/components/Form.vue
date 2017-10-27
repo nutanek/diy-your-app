@@ -7,7 +7,7 @@
 
         <div class="form-group">
             <label>Profile Image</label>
-            <input type="file" class="form-control-file">
+            <input type="file" class="form-control-file" @change="changeProfileImage">
         </div>
 
         <div class="form-group">
@@ -65,6 +65,16 @@
             },
             changeAppIconColor(color) {
                 this.appIconColor = color
+            },
+            changeProfileImage(e) {
+                this.getImage(e)
+            },
+            getImage(e) {
+                let files = e.target.files || e.dataTransfer.files;
+                if (!files.length) {
+                    return;
+                }
+                this.edit('profileImage', files[0])
             }
         },
         watch: {
