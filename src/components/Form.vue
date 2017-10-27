@@ -46,15 +46,19 @@
                 <color-picker :initColor="titleBackgroundColor" :pickColor="changeTitleBgColor"></color-picker>
             </div>
         </div>
+
+        <save-mockup></save-mockup>
     </form>
 </template>
 
 <script>
     import ColorPicker from './ColorPicker.vue'
+    import SaveMockup from './SaveMockup.vue'
     export default {
         props: ['info', 'edit'],
         components: {
-            'color-picker': ColorPicker
+            'color-picker': ColorPicker,
+            'save-mockup': SaveMockup
         },
         data() {
             return {

@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper" id="mockup">
         <div class="row top justify-content-center">
             <div>
                 <div class="io -camera"></div>
@@ -71,6 +71,7 @@
         padding-right: 10px;
         border: 2px solid #AAAAAA;
         border-radius: 30px;
+        background-color: #FFFFFF;
         &.-small {
             transform: scale(0.9);
         }
