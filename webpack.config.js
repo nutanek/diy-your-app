@@ -25,23 +25,24 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]'
-        }
-      },
-      {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
       },
       {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        exclude: path.resolve(__dirname, './src/assets/fonts/'),
+        options: {
+          name: 'static/images/[name].[ext]?[hash]'
+        }
+      },
+      {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "url-loader?limit=10000&mimetype=application/font-woff"
+        loader: "url-loader?limit=10000&mimetype=application/font-woff&name=/fonts/[name].[ext]"
       },
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "file-loader"
+        loader: "file-loader?name=/fonts/[name].[ext]"
       }
     ]
   },

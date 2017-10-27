@@ -41,7 +41,6 @@
         methods: {
             editInfo(propName, value) {
                 this.info[propName] = value
-                console.log(value)
             }
         }
     }

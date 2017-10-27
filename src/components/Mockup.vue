@@ -37,7 +37,7 @@
         },
         data() {
             return {
-                backgroundImageContent: 'https://www.w3schools.com/w3images/fjords.jpg'
+                backgroundImageContent: require('./../static/images/background.jpg')
             }
         },
         methods: {
