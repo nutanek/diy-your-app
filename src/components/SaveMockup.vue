@@ -12,11 +12,6 @@
     import SaveImage from 'dom-to-image'
     import FileSaver from 'file-saver'
     export default {
-        data() {
-            return {
-
-            }
-        },
         methods: {
             saveToImage() {
                 let node = document.getElementById('mockup')

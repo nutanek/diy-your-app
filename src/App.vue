@@ -6,10 +6,10 @@
             </div>
         </div>
         <div class="row diy-editor">
-            <div class="col-md-5">
+            <div class="col-lg-5">
                 <app-mockup :info="info"></app-mockup>
             </div>
-            <div class="col-md-7">
+            <div class="col-lg-7">
                 <app-form :info="info" :edit="editInfo"></app-form>
             </div>
         </div>

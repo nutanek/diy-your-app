@@ -1,26 +1,29 @@
 <template>
-    <div class="wrapper" id="mockup">
-        <div class="row top justify-content-center">
-            <div>
-                <div class="io -camera"></div>
-                <div class="io -speaker"></div>
+    <div class="wrapper">
+        <color-selector :change="changeColor"></color-selector>
+        <div class="mobile-frame" id="mockup" v-bind:style="{backgroundColor: mobileColor}">
+            <div class="row top justify-content-center">
+                <div>
+                    <div class="io -camera"></div>
+                    <div class="io -speaker"></div>
+                </div>
             </div>
-        </div>
-        <div class="col screen">
-            <div class="row background" v-bind:style="{backgroundImage: 'url(' + backgroundImageContent + ')'}"></div>
-            <ui-header 
-                :profileImage="info.profileImage"
-                :displayname="info.displayname"
-                :displaynameColor="info.displaynameColor">
-            </ui-header>
-            <ui-content 
-                :appBackground="info.appBackgroundColor"
-                :titleBackground="info.titleBackgroundColor"
-                :appIcon="info.appIconColor">
-            </ui-content>
-        </div>
-        <div class="row bottom justify-content-center">
-            <div class="home-button"></div>
+            <div class="col screen">
+                <div class="row background" v-bind:style="{backgroundImage: 'url(' + backgroundImageContent + ')'}"></div>
+                <ui-header 
+                    :profileImage="info.profileImage"
+                    :displayname="info.displayname"
+                    :displaynameColor="info.displaynameColor">
+                </ui-header>
+                <ui-content 
+                    :appBackground="info.appBackgroundColor"
+                    :titleBackground="info.titleBackgroundColor"
+                    :appIcon="info.appIconColor">
+                </ui-content>
+            </div>
+            <div class="row bottom justify-content-center">
+                <div class="home-button"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -28,16 +31,19 @@
 <script>
     import Header from './UiHeader.vue'
     import Content from './UiContent.vue'
+    import ColorSelector from './MobileColorSelector.vue'
     import { createImage } from './../libs/image'
     export default {
         props: ['info'],
         components: {
             'ui-header': Header,
-            'ui-content': Content
+            'ui-content': Content,
+            'color-selector': ColorSelector
         },
         data() {
             return {
-                backgroundImageContent: require('./../static/images/background.jpg')
+                backgroundImageContent: require('./../static/images/background.jpg'),
+                mobileColor: '#FFFFFF'
             }
         },
         methods: {
@@ -48,6 +54,9 @@
                 }, () => {
                     // do nothing
                 })
+            },
+            changeColor(color) {
+                this.mobileColor = color
             }
         },
         computed: {
@@ -66,6 +75,9 @@
 <style lang="scss" scoped>
     $screen-height: 540px;
     .wrapper {
+        position: relative;
+    }
+    .mobile-frame {
         width: 350px;
         padding-left: 10px;
         padding-right: 10px;
