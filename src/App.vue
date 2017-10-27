@@ -32,7 +32,8 @@
                     appBackgroundColor: '#FFFFFF',
                     titleBackgroundColor: "#E74C3C",
                     appIconColor: "#000000",
-                    profileImage: null                
+                    profileImage: null,
+                    backgroundImage: null            
                 } 
             }
         },

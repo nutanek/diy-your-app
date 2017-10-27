@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="col screen">
-            <div class="row background"></div>
+            <div class="row background" v-bind:style="{backgroundImage: 'url(' + backgroundImageContent + ')'}"></div>
             <ui-header 
                 :profileImage="info.profileImage"
                 :displayname="info.displayname">
@@ -27,11 +27,37 @@
 <script>
     import Header from './UiHeader.vue'
     import Content from './UiContent.vue'
+    import { createImage } from './../libs/image'
     export default {
         props: ['info'],
         components: {
             'ui-header': Header,
             'ui-content': Content
+        },
+        data() {
+            return {
+                backgroundImageContent: 'https://www.w3schools.com/w3images/fjords.jpg'
+            }
+        },
+        methods: {
+            changeImage(propName, file) {
+                let vm = this
+                createImage(file).then(data => {
+                    vm[propName] = data
+                }, () => {
+                    // do nothing
+                })
+            }
+        },
+        computed: {
+            backgroundData() {
+                return this.info.backgroundImage
+            }
+        },
+        watch: {
+            backgroundData(imageData) {
+                this.changeImage('backgroundImageContent', imageData)
+            }
         }
     }
 </script>
@@ -88,7 +114,6 @@
         overflow: hidden;
         background-size: cover;
         background-position: center; 
-        background-image: url('https://www.w3schools.com/w3images/fjords.jpg');
         filter: blur(5px);
         transform: scale(1.3);
     }

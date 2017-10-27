@@ -12,7 +12,7 @@
 
         <div class="form-group">
             <label>Background Image</label>
-            <input type="file" class="form-control-file">
+            <input type="file" class="form-control-file" @change="changeBackgroundImage">
         </div>
 
         <div class="form-group">
@@ -67,14 +67,19 @@
                 this.appIconColor = color
             },
             changeProfileImage(e) {
-                this.getImage(e)
+                let imageData = this.getImage(e)
+                this.edit('profileImage', imageData)
+            },
+            changeBackgroundImage(e) {
+                let imageData = this.getImage(e)
+                this.edit('backgroundImage', imageData)
             },
             getImage(e) {
                 let files = e.target.files || e.dataTransfer.files;
                 if (!files.length) {
                     return;
                 }
-                this.edit('profileImage', files[0])
+                return files[0]
             }
         },
         watch: {
