@@ -20,8 +20,9 @@
         methods: {
             saveToImage() {
                 let node = document.getElementById('mockup')
+                let currentTime = new Date
                 SaveImage.toBlob(node).then(function (blob) {
-                    FileSaver.saveAs(blob, 'MY-DIY-APP.png');
+                    FileSaver.saveAs(blob, 'DIY-' + currentTime.getTime() + '.png')
                 });
             }
         }

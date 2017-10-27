@@ -1,11 +1,11 @@
 <template>
     <div id="app" class="container">
-        <div class="row title">
+        <div class="row diy-title">
             <div class="col text-center">
                 <h1>DIY You App</h1>
             </div>
         </div>
-        <div class="row editor">
+        <div class="row diy-editor">
             <div class="col-md-5">
                 <app-mockup :info="info"></app-mockup>
             </div>
@@ -47,12 +47,12 @@
 </script>
 
 <style lang="scss">
-    .title {
+    .diy-title {
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    .editor {
-        margin-top: 20px;
-        margin-bottom: 20px;
+    .diy-editor {
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 </style>
